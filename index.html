@@ -84,8 +84,12 @@
     .obs{font-size:.9rem; margin-top:8px}
 
     /* gif */
-.gifWrap .badge{display:inline-block;margin:0 0 8px 0}
-    .gifWrap{max-width:calc(var(--gifW) + 24px); margin:0 auto; text-align:center}
+    .gifWrap{
+      max-width:calc(var(--gifW) + 24px);
+      margin:0 auto;
+      text-align:center;   /* centers the label */
+    }
+    .gifWrap .badge{display:inline-block; margin:0 0 8px 0}
     .gif{max-width:var(--gifW); width:100%; height:auto; display:block; margin:0 auto}
 
     footer{margin-top:22px; text-align:center; color:#5b6473; font-size:.9rem}
@@ -99,9 +103,9 @@
   <div class="container">
     <header>
       <div class="brand">
-        <!-- your monogram selfie -->
+        <!-- monogram selfie (add assets/selfie/monogram.jpg) -->
         <div class="logo">
-          <img src="assets/selfie/close-up.jpg" alt="Monogram selfie">
+          <img src="assets/selfie/monogram.jpg" alt="Monogram selfie">
         </div>
         <div class="title">
           <h1>Project 0: Becoming Friends with Your Camera</h1>
@@ -117,7 +121,7 @@
 
     <section class="card">
       <div class="callout">
-        I tried to understand how distance and framing change how things look. Same phone. Same lens. I moved my feet and paid attention to what felt different.
+        I wanted to see how much moving my feet changes a photo. Same phone. Same lens. Three small experiments and a few notes on what I noticed.
       </div>
     </section>
 
@@ -129,15 +133,15 @@
           <figure>
             <span class="badge">A – Close</span>
             <img src="assets/selfie/closeup_selfie.jpg" alt="Close selfie with perspective distortion">
-            <figcaption>Close to the camera. My features stretch a bit.</figcaption>
+            <figcaption>Up close my nose pops and the cheeks feel wider. It reads like a typical bathroom selfie.</figcaption>
           </figure>
           <figure>
             <span class="badge alt">B – Stepped back</span>
             <img src="assets/selfie/zoomed.jpg" alt="Stepped back and reframed">
-            <figcaption>Backed up and matched framing. Proportions feel calmer.</figcaption>
+            <figcaption>Same face size, but calmer proportions. Glasses look less warped and the chin doesn’t crowd the frame.</figcaption>
           </figure>
         </div>
-        <p class="obs"><strong>Growth:</strong> I used to think “zoom” fixes portraits. Here I learned distance is the real lever. Backing up fixed the look without changing gear.</p>
+        <p class="obs"><strong>Story:</strong> I started with the classic arm-length shot, then I walked back a few meters and matched the framing. That tiny change fixed most of what I didn’t like about the first photo.</p>
       </div>
     </section>
 
@@ -149,15 +153,15 @@
           <figure>
             <span class="badge">A – Farther spot</span>
             <img src="assets/street/telephoto.jpg" alt="Farther position, matched framing">
-            <figcaption>From far away the scene feels flatter.</figcaption>
+            <figcaption>From back here the stop sign stacks tight with the facade. Distances feel shorter than they are.</figcaption>
           </figure>
           <figure>
             <span class="badge alt">B – Closer spot</span>
             <img src="assets/street/wide-walked-forward.jpg" alt="Closer position, matched framing">
-            <figcaption>Closer makes the depth read stronger.</figcaption>
+            <figcaption>Closer in, the sidewalk stretches and the sign pulls forward. Lines open up and depth reads stronger.</figcaption>
           </figure>
         </div>
-        <p class="obs"><strong>Growth:</strong> I matched the size of the buildings in both shots and only changed where I stood. It made the “compression” idea click for me.</p>
+        <p class="obs"><strong>Story:</strong> I kept the building about the same size across both shots and only changed where I stood. Seeing the sign shift in relation to the wall made “compression” click for me.</p>
       </div>
     </section>
 
@@ -167,15 +171,15 @@
       <div class="gifWrap">
         <span class="badge alt">Move back and keep the subject size</span>
         <img class="gif" src="assets/dolly/dolly.gif" alt="Dolly zoom animation">
-        <p class="obs"><strong>Growth:</strong> Walking back while keeping the subject the same size made the background breathe. It connected distance and field of view in a way I could feel, not just read about.</p>
+        <p class="obs"><strong>Story:</strong> I walked back step by step and kept the cups the same size in frame. The background stretches while the stack holds steady. It felt strange while shooting and fun to see as a loop.</p>
       </div>
     </section>
 
     <section class="card">
       <h2>Takeaways</h2>
       <ul class="muted">
-        <li>Distance sets perspective. Framing sets what we see.</li>
-        <li>For portraits I’ll step back first, then frame.</li>
+        <li>Distance sets perspective. Framing decides what we emphasize.</li>
+        <li>For people shots I’ll step back first, then frame.</li>
         <li>For scenes I’ll choose distance to control how flat or deep it feels.</li>
       </ul>
     </section>
