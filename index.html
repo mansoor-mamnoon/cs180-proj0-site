@@ -2,57 +2,186 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>CS180/CS280A – Project 0: Becoming Friends with Your Camera</title>
+  <title>CS180/CS280A Project 0 – Becoming Friends with Your Camera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: -apple-system, system-ui, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; line-height: 1.5; }
-    h1, h2 { margin: 0 0 12px; }
-    .caption { font-size: 0.95rem; color: #444; margin-top: 6px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; align-items: start; }
-    figure { margin: 0; }
-    img { width: 100%; height: auto; }
-    .note { background: #f6f8fa; padding: 12px; border-radius: 8px; border: 1px solid #e5e7eb; }
-    footer { margin-top: 32px; font-size: 0.9rem; color: #666; }
+    :root{
+      --accent:#0ea5e9;
+      --ink:#111;
+      --bg:#fafafa;
+
+      --border:#e5e7eb;
+      --card:#ffffff;
+      --shadow:0 2px 8px rgba(0,0,0,.06);
+      --radius:12px;
+
+      --container:960px;
+      --pair:860px;
+      --imgBox:300px;   /* width of each comparison card */
+      --gifW:380px;     /* displayed width cap for the GIF */
+      --gap:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family:-apple-system, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      margin:24px; line-height:1.55; color:var(--ink); background:var(--bg);
+    }
+    .container{max-width:var(--container); margin:0 auto}
+
+    /* header */
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      background:linear-gradient(135deg,#ecfeff,#eff6ff);
+      border:1px solid var(--border); border-radius:var(--radius);
+      padding:14px 16px; box-shadow:var(--shadow); margin-bottom:18px;
+    }
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{
+      width:48px; height:48px; border-radius:50%;
+      overflow:hidden; border:2px solid var(--accent); flex:none;
+      background:#ddd; display:grid; place-items:center;
+    }
+    /* keep selfie centered in the circle */
+    .logo img{
+      width:100%; height:100%; display:block;
+      object-fit:cover; object-position:center center;
+    }
+    .title h1{margin:0; font-size:1.18rem}
+    .title p{margin:2px 0 0; color:#475569; font-size:.9rem}
+    .chips{display:flex; gap:8px; flex-wrap:wrap}
+    .chip{
+      border:1px solid var(--border); background:var(--card); padding:6px 10px;
+      border-radius:999px; font-size:.82rem; color:#5b6473
+    }
+
+    /* sections */
+    .card{
+      background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+      padding:18px; box-shadow:var(--shadow); margin:16px 0;
+    }
+    h2{margin:0 0 10px; text-align:center; font-size:1.06rem}
+    p{margin:10px 0}
+    .muted{color:#58606e}
+    .callout{
+      border-left:4px solid var(--accent);
+      background:#f8fafc; padding:12px 14px; border-radius:8px; border:1px solid var(--border); margin:10px 0;
+    }
+
+    /* comparisons */
+    .pair{max-width:var(--pair); margin:0 auto 10px auto}
+    .grid{display:flex; flex-wrap:wrap; justify-content:center; gap:var(--gap)}
+    figure{
+      margin:0; padding:10px; background:var(--card); border:1px solid var(--border);
+      border-radius:10px; width:var(--imgBox); box-shadow:var(--shadow); text-align:center;
+    }
+    img{max-width:100%; height:auto; display:block; border-radius:8px}
+    .badge{
+      display:inline-block; background:#111; color:white; font-size:.75rem;
+      padding:4px 8px; border-radius:999px; margin-bottom:8px; letter-spacing:.02em;
+    }
+    .badge.alt{background:var(--accent)}
+    figcaption{font-size:.83rem; color:#5b6473; margin-top:6px}
+    .obs{font-size:.9rem; margin-top:8px}
+
+    /* gif */
+    .gifWrap{max-width:calc(var(--gifW) + 24px); margin:0 auto}
+    .gif{max-width:var(--gifW); width:100%; height:auto; display:block; margin:0 auto}
+
+    footer{margin-top:22px; text-align:center; color:#5b6473; font-size:.9rem}
+    @media print{
+      body{background:white; margin:18px}
+      header,.card{box-shadow:none}
+    }
   </style>
 </head>
 <body>
-  <h1>Project 0: Becoming Friends with Your Camera</h1>
-  <div class="note">
-    <p><strong>Course:</strong> CS180/CS280A · <strong>Student:</strong> Mansoor Mamnoon · <strong>Due:</strong> Sept 2, 2025 11:59 PM</p>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <!-- your monogram selfie -->
+        <div class="logo">
+          <img src="assets/selfie/close-up.jpg" alt="Monogram selfie">
+        </div>
+        <div class="title">
+          <h1>Project 0: Becoming Friends with Your Camera</h1>
+          <p class="muted">Shot with the default iPhone camera.</p>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip">CS180/CS280A</span>
+        <span class="chip">Due Sep 2, 2025 at 11:59 PM</span>
+        <span class="chip">Mansoor Mamnoon</span>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="callout">
+        I tried to understand how distance and framing change how things look. Same phone. Same lens. I moved my feet and paid attention to what felt different.
+      </div>
+    </section>
+
+    <!-- Part 1 -->
+    <section class="card">
+      <h2>Part 1 – Selfie: Wrong vs Right</h2>
+      <div class="pair">
+        <div class="grid">
+          <figure>
+            <span class="badge">A – Close</span>
+            <img src="assets/selfie/closeup_selfie.jpg" alt="Close selfie with perspective distortion">
+            <figcaption>Close to the camera. My features stretch a bit.</figcaption>
+          </figure>
+          <figure>
+            <span class="badge alt">B – Stepped back</span>
+            <img src="assets/selfie/zoomed.jpg" alt="Stepped back and reframed">
+            <figcaption>Backed up and matched framing. Proportions feel calmer.</figcaption>
+          </figure>
+        </div>
+        <p class="obs"><strong>Growth:</strong> I used to think “zoom” fixes portraits. Here I learned distance is the real lever. Backing up fixed the look without changing gear.</p>
+      </div>
+    </section>
+
+    <!-- Part 2 -->
+    <section class="card">
+      <h2>Part 2 – Architectural Perspective Compression</h2>
+      <div class="pair">
+        <div class="grid">
+          <figure>
+            <span class="badge">A – Farther spot</span>
+            <img src="assets/street/telephoto.jpg" alt="Farther position, matched framing">
+            <figcaption>From far away the scene feels flatter.</figcaption>
+          </figure>
+          <figure>
+            <span class="badge alt">B – Closer spot</span>
+            <img src="assets/street/wide-walked-forward.jpg" alt="Closer position, matched framing">
+            <figcaption>Closer makes the depth read stronger.</figcaption>
+          </figure>
+        </div>
+        <p class="obs"><strong>Growth:</strong> I matched the size of the buildings in both shots and only changed where I stood. It made the “compression” idea click for me.</p>
+      </div>
+    </section>
+
+    <!-- Part 3 -->
+    <section class="card">
+      <h2>Part 3 – Dolly Zoom</h2>
+      <div class="gifWrap">
+        <span class="badge alt">Move back and keep the subject size</span>
+        <img class="gif" src="assets/dolly/dolly.gif" alt="Dolly zoom animation">
+        <p class="obs"><strong>Growth:</strong> Walking back while keeping the subject the same size made the background breathe. It connected distance and field of view in a way I could feel, not just read about.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Takeaways</h2>
+      <ul class="muted">
+        <li>Distance sets perspective. Framing sets what we see.</li>
+        <li>For portraits I’ll step back first, then frame.</li>
+        <li>For scenes I’ll choose distance to control how flat or deep it feels.</li>
+      </ul>
+    </section>
+
+    <footer>
+      Printed with URL in header as requested. If interactive parts cannot be captured in PDF I will note it here.
+    </footer>
   </div>
-
-  <h2>Part 1: Selfie – Wrong vs Right</h2>
-  <div class="grid">
-    <figure>
-      <img src="assets/selfie/close-up.jpg" alt="Close-up selfie with wide-angle distortion">
-      <figcaption class="caption"><strong>Close-up (wide):</strong> Typical distorted selfie.</figcaption>
-    </figure>
-    <figure>
-      <img src="assets/selfie/step-back-zoom-in.jpg" alt="Stepped back, zoomed-in portrait">
-      <figcaption class="caption"><strong>Step back + zoom in:</strong> Same face size, better perspective.</figcaption>
-    </figure>
-  </div>
-
-  <h2>Part 2: Architectural Perspective Compression</h2>
-  <div class="grid">
-    <figure>
-      <img src="assets/street/telephoto.jpg" alt="Telephoto view down a street">
-      <figcaption class="caption"><strong>Telephoto:</strong> Flattened/compressed look.</figcaption>
-    </figure>
-    <figure>
-      <img src="assets/street/wide-walked-forward.jpg" alt="Wide lens shot from closer position">
-      <figcaption class="caption"><strong>Wide & closer:</strong> Stronger depth cues.</figcaption>
-    </figure>
-  </div>
-
-  <h2>Part 3: Dolly Zoom (Animated)</h2>
-  <figure>
-    <img src="assets/dolly/dolly.gif" alt="Dolly zoom animation">
-    <figcaption class="caption">Move camera back while zooming in (subject size roughly constant).</figcaption>
-  </figure>
-
-  <footer>
-    <p>If any interactive media can’t be captured in the PDF, I note it here.</p>
-  </footer>
 </body>
 </html>
